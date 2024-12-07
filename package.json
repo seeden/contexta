@@ -12,6 +12,10 @@
     "react",
     "async-local-storage"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seeden/contexta.git"
+  },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
