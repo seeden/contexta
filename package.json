@@ -1,0 +1,48 @@
+{
+  "name": "contexta",
+  "version": "0.0.1",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "license": "MIT",
+  "keywords": [
+    "context",
+    "async",
+    "await",
+    "nodejs",
+    "react",
+    "async-local-storage"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    }
+  },
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "npm run clean && npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc -p tsconfig.json",
+    "build:cjs": "tsc -p tsconfig-cjs.json",
+    "build:watch": "npm run build:esm:watch & npm run build:cjs:watch",
+    "build:esm:watch": "tsc -p tsconfig.json --watch",
+    "build:cjs:watch": "tsc -p tsconfig-cjs.json --watch",
+    "test": "jest --passWithNoTests",
+    "test:file": "jest ./src/index.spec.ts --passWithNoTests --verbose",
+    "valid": "tsc --noEmit"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.10.1",
+    "express": "^4.19.2",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5",
+    "typescript": "5.7.2"
+  }
+}
