@@ -9,7 +9,7 @@ export default class Context<T> {
     this.defaultValue = defaultValue;
   }
 
-  run<TReturn>(value: T, fn: () => TReturn | Promise<TReturn>): TReturn | Promise<TReturn> {
+  run<TReturn>(value: T, fn: () => TReturn): TReturn {
     return this.asyncLocalStorage.run(value, fn);
   }
 
